@@ -24,6 +24,11 @@ jobs:
       - name: Install Python packages
         run: pip install -r requirements.txt
 
+      # - name: Recreate gh-pages branch
+      #   run: |
+      #     git branch -d gh-pages
+      #     git switch --orphan gh-pages
+
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
         with:
