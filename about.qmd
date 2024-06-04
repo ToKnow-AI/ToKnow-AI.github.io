@@ -1,0 +1,39 @@
+---
+title: "About"
+image: images/logo.png
+about:
+  template: jolla
+  links:
+    - icon: twitter
+      text: Twitter - ToKnow.ai
+      href: https://twitter.com/ToKnow_ai
+    - icon: linkedin
+      text: LinkedIn - ToKnow.ai
+      href: https://linkedin.com/company/toknow-ai
+    - icon: github
+      text: Github - ToKnow.ai
+      href: https://github.com/ToKnow-ai
+    - icon: instagram
+      text: Instagram - ToKnow.ai
+      href: https://www.instagram.com/toknow.ai/
+    - icon: youtube
+      text: Youtube - ToKnow.ai
+      href: https://www.youtube.com/@ToKnow_ai
+    - icon: whatsapp
+      text: Whatsapp - ToKnow.ai
+      href: https://whatsapp.com/channel/0029VaYpIypEVccHzzLusU1p
+    - icon: threads
+      text: Threads - ToKnow.ai
+      href: https://www.threads.net/@toknow.ai
+    - icon: tiktok
+      text: Tiktok - ToKnow.ai
+      href: https://www.tiktok.com/@toknow.ai
+    - icon: email
+      text: Email - ToKnow.ai
+      href: mailto:ask@toknow.ai
+
+
+      
+---
+
+<b><u>ToKnow</u>.ai</b> aims <u>to</u> extract <u>know</u>ledge from information in order to generate valuable insights and intelligence.

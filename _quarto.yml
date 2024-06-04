@@ -1,0 +1,41 @@
+project:
+  type: website
+website:
+  title: "ToKnow.ai"
+  site-url: https://toknow.ai
+  description: "ToKnow.ai aims to extract knowledge from information in order to generate valuable insights and intelligence."
+  navbar:
+    right:
+      - href: index.qmd
+        text: Posts
+      - about.qmd
+      - icon: github
+        href: https://github.com/ToKnow-ai
+        aria-label: Github - ToKnow.ai
+      - icon: twitter
+        href: https://twitter.com/ToKnow_ai
+        aria-label: Twitter - ToKnow.ai
+      - icon: rss
+        href: feed.xml
+        aria-label: ToKnow.ai RSS
+  page-footer:
+    left: "Copyright © {{< year >}}, ToKnow.ai"
+    right: 
+      - text: "Terms of Service"
+        href: terms-of-service.qmd
+      - text: "License"
+        href: LICENSE
+format:
+  html:
+    theme:
+      light: flatly
+      dark: darkly
+    css: styles.css
+    link-external-newwindow: true
+execute:
+  freeze: auto
+shortcodes:
+    - filters/year.lua
+
+
+

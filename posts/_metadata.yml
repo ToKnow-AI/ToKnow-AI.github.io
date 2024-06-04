@@ -1,0 +1,47 @@
+# Enable banner style title blocks
+title-block-banner: true
+categories: [tech]
+author:
+  - name: Charles Kabui
+    id: charles@toknow.ai
+    email: charles@toknow.ai
+toc: true
+license:
+  text: GNU GENERAL PUBLIC LICENSE
+  type: open-access
+  url: https://www.gnu.org/licenses/gpl-3.0.en.html
+format:
+  html:
+    citation: true
+    google-scholar: true
+    comments:
+      giscus:
+        repo: ToKnow-ai/ToKnow-ai.github.io
+        mapping: pathname
+        loading: lazy
+        category: Giscus Comments
+        category-id: giscus-comments
+  pdf:
+    # alternative: https://github.com/dragonstyle/share-post/blob/8026647db8619666cadef7d4205d9f16571ca95d/_extensions/share-post/share-post.lua#L265
+    include-in-header:  
+        - text: |
+            \usepackage{tcolorbox}
+            \usepackage{fontawesome5}
+            \usepackage{xcolor}
+            \definecolor{youtubeColor}{HTML}{FF0000}
+            \usepackage{tikz}
+  # ipynb: default
+# https://quarto.org/docs/authoring/front-matter.html
+filters:
+  - ../filters/post_action_buttons.lua
+  - ../filters/replace_base64_video_src.lua
+  - ../filters/no-empty-toc.lua
+  - at: post-render
+    path: ../filters/output_when_format.lua
+open-ipynb: 
+  repository: "ToKnow-ai/ToKnow-ai.github.io"
+  branch:
+    dev: "quarto-dev"
+    main: "main"
+ipynb-filters:
+  - ../filters/notebook_filter.py

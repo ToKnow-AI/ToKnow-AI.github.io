@@ -1,0 +1,22 @@
+.quarto-title .quarto-categories {
+    column-gap: 0
+}
+
+.quarto-title .quarto-categories .quarto-category {
+    padding: 0;
+    font-size: 1.25em;
+    text-transform: capitalize;
+    border: 0;
+    border-radius: 1.25rem;
+    opacity: 1;
+}
+
+.quarto-title .quarto-categories .quarto-category:not(:last-child):after {
+    content: "\A";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #b83b3b;
+    display: inline-block;
+    margin: 0 8px;
+}
