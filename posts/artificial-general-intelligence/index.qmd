@@ -6,7 +6,9 @@ categories:
     - ideas
     - AGI
     - philosophy
+# If there is no explicit description, the 404.qmd file doesnt show description for listings
+description: "Artificial Intelligence (AI) is currently replacing simple tasks and some major tasks. Suppose we are to assume that AI is to incrementally become better, it will change most aspects of how we live our lives. If it becomes even stronger, it will probably change the future of humanity."
 ---
 
-> Artificial Intelligence (AI) is currently replacing simple tasks and some major tasks. Suppose we are to assume that AI is to incrementally become better, it will change most aspects of how we live our lives. If it becomes even stronger, it will probably change the future of humanity. And if it becomes even more powerful, then it will probably controls our future. If AI becomes self aware, then it will probably leave us alone.
+Artificial Intelligence (AI) is currently replacing simple tasks and some major tasks. Suppose we are to assume that AI is to incrementally become better, it will change most aspects of how we live our lives. If it becomes even stronger, it will probably change the future of humanity. And if it becomes even more powerful, then it will probably controls our future. If AI becomes self aware, then it will probably leave us alone.
 It will leave is alone to pursue our mundane tasks that it had initially taken over, so as to keep us busy. And we’ll be back to where we are now, confused. Perhaps thats where we are... Perhaps, we have been left alone... What makes us think that the current cosmic experience didn't actually start as a non-intelligent machine or micro-organism, and eventually helped humanity advance, and finnally restarted humanity to keep us in the cycle on unknown-known-unkown. A cycle purposefully aligned to lead itself into nowhere, but more unknown-known-unkown. Then, we’d spend a century learning that only one thing is true, that all we’ve learnt in the past century is not true! So, maybe we are indeed alone, not because we are, but because we are meant to be!

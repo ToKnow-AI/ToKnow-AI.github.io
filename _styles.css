@@ -1,0 +1,19 @@
+/* css styles */
+.post_action_buttons img {
+    max-height: 1.3em
+}
+
+.footer .nav-footer-center .footer-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.footer .nav-footer-center .footer-items li.nav-item {
+    margin-bottom: 0.5em;
+}
+
+.footer .nav-footer .nav-footer-left, .footer .nav-footer .nav-footer-right{
+    display: none;
+}
+

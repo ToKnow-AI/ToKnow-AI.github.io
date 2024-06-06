@@ -1,0 +1,19 @@
+title: "Information <u>To Know</u>ledge"
+listing:
+  id: posts-listing
+  contents: posts
+  sort: "date desc"
+  type: default
+  categories: true
+  sort-ui: false
+  filter-ui: true
+page-layout: full
+title-block-banner: true
+categories:
+  - artificial intelligence
+  - data science
+  - security
+  - ideas
+format:
+  html:
+    css: _index.css

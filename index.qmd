@@ -1,23 +1,10 @@
 ---
-title: "Information <u>To Know</u>ledge"
+feed: true
 listing:
-  id: posts-listing
-  contents: posts
-  sort: "date desc"
-  type: default
-  categories: true
-  sort-ui: false
-  filter-ui: true
-page-layout: full
-title-block-banner: true
-categories:
-  - artificial intelligence
-  - data science
-  - security
-  - ideas
-format:
-  html:
-    css: index.css
+  feed:
+    type: partial
+metadata-files: 
+  - _index.yml
 ---
 
 :::{#posts-listing}
