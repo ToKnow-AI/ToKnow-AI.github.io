@@ -13,24 +13,20 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
-
-      - name: Recreate gh-pages branch
+      
+      - name: Reset gh-pages branch
         run: |
           #!/bin/bash
 
           CURRENT_BRANCH=`git symbolic-ref --short HEAD`
-          BRANCH='gh-pages'
-          if git ls-remote --exit-code --heads origin $BRANCH >/dev/null; then
-            git push origin --delete $BRANCH  # Push deletion to remote repository
-            echo "Git branch '$BRANCH' deleted in the remote repository"
-          else
-            echo "Git branch '$BRANCH' does not exist in the remote repository"
-          fi
-          git switch --orphan $BRANCH
+          TEMP_BRANCH="temp-branch-$(date +%s)"
+          ORIGIN_BRANCH='gh-pages'
+          echo "TEMP_BRANCH='$TEMP_BRANCH'"
+          git switch --orphan $TEMP_BRANCH
           git config user.name 'Github Action' 
           git config user.email 'ask@toknow.ai'
-          git commit --allow-empty -m "Empty Commit"
-          git push --set-upstream origin $BRANCH
+          git commit --allow-empty -m "Empty Commit - $(date)"
+          git push origin $TEMP_BRANCH:$ORIGIN_BRANCH --force
           git checkout $CURRENT_BRANCH
 
       - name: Set up Quarto
