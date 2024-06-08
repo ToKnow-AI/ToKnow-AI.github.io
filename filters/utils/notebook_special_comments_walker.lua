@@ -75,7 +75,9 @@ end
 ---@return table<'Pandoc', function>
 local notebook_special_comments_walker = function(attribute_key, walk_callback, children_predicate)
   return {
-    Pandoc = function(doc)
+    ---@param doc pandoc.Pandoc
+    ---@return pandoc.Pandoc
+    Pandoc = function (doc)
       local meta = doc.meta
       local get_and_update_meta = function ()
         return meta, function (updated_meta)

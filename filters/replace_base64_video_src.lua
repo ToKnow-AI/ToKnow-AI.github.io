@@ -10,7 +10,7 @@ local get_youtube_image = function(video_src)
     -- "www.youtube.com/watch?v=kCc8FmEb1nY"
     string.match(video_src, ".+youtube.com/watch%?v%=(.+)$") or
     -- "https://youtu.be/kCc8FmEb1nY?si=77OsaKikOnJgRRRy"
-    string.match(video_src, ".+youtu.be/(.+)%?.+$") or
+    string.match(video_src, ".+youtu.be/([%w]+).*$") or
     -- "https://www.youtube.com/embed/kCc8FmEb1nY?si=XspSx2xnp7xhYgDe"
     string.match(video_src, ".+youtube.com/embed/(.+)%?.+$")
   if video_id then
@@ -84,30 +84,37 @@ end
 
 -- Function to return videovideo_src block for HTML
 ---@param video_src string
----@return pandoc.Block
-local function html_src_block(video_src)
-  local video = quarto.utils.string_to_blocks("{{< video " .. video_src .. " >}}")
-  return pandoc.Div(video)
+---@param meta pandoc.MetaBlocks
+---@return pandoc.Block,pandoc.MetaBlocks
+local function html_src_block(video_src, meta)
+  local video_blocks = quarto.utils.string_to_blocks("{{< video " .. video_src .. " >}}")
+  local youtube_image_src = get_youtube_image(video_src)
+  if youtube_image_src and not meta['image'] then
+    -- https://github.com/quarto-dev/quarto-cli/discussions/9767
+    video_blocks:insert(pandoc.RawInline("html", "<img class='preview-image hidden' src='" .. youtube_image_src .. "' />"))
+  end
+  return pandoc.Div(video_blocks), meta
 end
 
 -- Function to extract base64 video
 ---@param video_src table<'key'|'value', string>
 ---@param block pandoc.Block
----@return pandoc.Block
-local function replace_base64_video_src(video_src, block)
+---@param meta pandoc.MetaBlocks
+---@return pandoc.Block, pandoc.MetaBlocks
+local function replace_base64_video_src(video_src, block, meta)
   if not (str_ends_with(quarto.doc.input_file, ".ipynb")) then
-    return block
+    return block, meta
   end
   
   if quarto.doc.is_format('pdf') then
-    return pdf_src_block(video_src.value)
+    return pdf_src_block(video_src.value), meta
   end
 
   if quarto.doc.is_format('html') then
-    return html_src_block(video_src.value)
+    return html_src_block(video_src.value, meta)
   end
   
-  return block
+  return block, meta
 end
 
 return notebook_special_comments_walker('video-src', replace_base64_video_src, is_output_cell)

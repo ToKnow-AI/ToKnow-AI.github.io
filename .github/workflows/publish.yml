@@ -25,7 +25,12 @@ jobs:
           git switch --orphan $TEMP_BRANCH
           git config user.name 'Github Action' 
           git config user.email 'ask@toknow.ai'
-          git commit --allow-empty -m "Empty Commit - $(date)"
+          git show $CURRENT_BRANCH:CNAME > CNAME
+          git show $CURRENT_BRANCH:deployment-in-progress.html > index.html
+          git show $CURRENT_BRANCH:deployment-in-progress.html > 404.html
+          echo "Pages deployed on - $(date)" > README.md
+          git add CNAME index.html 404.html README.md
+          git commit -m "Pages deployed on - $(date)"
           git push origin $TEMP_BRANCH:$ORIGIN_BRANCH --force
           git checkout $CURRENT_BRANCH
 

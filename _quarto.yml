@@ -39,8 +39,9 @@ format:
     link-external-newwindow: true
 execute:
   freeze: auto
+  cache: false
 shortcodes:
-    - filters/year.lua
+  - filters/year.lua
 
 
 

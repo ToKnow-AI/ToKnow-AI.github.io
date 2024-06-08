@@ -78,7 +78,9 @@ local end_predicate = function (block_or_inline)
 end
 
 return {
-  Pandoc = function(doc)
+  ---@param doc pandoc.Pandoc
+  ---@return pandoc.Pandoc
+  Pandoc = function (doc)
     local meta = doc.meta
     local blocks, skipped_blocks = section_name_elements_walker(
       doc.blocks, 
