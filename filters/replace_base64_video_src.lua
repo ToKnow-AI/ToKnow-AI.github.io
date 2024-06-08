@@ -41,7 +41,7 @@ local makeBox = function (text, url, icon, color)
   else
     local pandoc_image_attributes = {
       id = tostring({}):sub(10),
-      width = '50%' -- width=0.5\\textwidth
+      width = '80%' -- width=0.5\\textwidth
     }
     local latex_top_raw_block = pandoc.RawInline(
       'latex',
@@ -57,7 +57,11 @@ local makeBox = function (text, url, icon, color)
               \\node[inner sep = 0pt] (a) {')
     -- \\includegraphics[width=0.5\\textwidth]{' .. youtube_image_src .. '}\
     -- we have done this so that quarto can download the image, pandoc doesnt embend online images to pdf
-    local pandoc_image_block = pandoc.Image(pandoc_image_attributes.id, youtube_image_src, pandoc_image_attributes.id, pandoc_image_attributes)
+    local pandoc_image_block = pandoc.Image(
+      pandoc_image_attributes.id, 
+      youtube_image_src, 
+      pandoc_image_attributes.id, 
+      pandoc_image_attributes)
     local latex_bottom_raw_block = pandoc.RawInline(
       'latex',
                 '};\

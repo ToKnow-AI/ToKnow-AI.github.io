@@ -28,6 +28,9 @@ about:
     - icon: tiktok
       text: Tiktok - ToKnow.ai
       href: https://www.tiktok.com/@toknow.ai
+    - icon: facebook
+      text: Facebook - ToKnow.ai
+      href: https://www.facebook.com/ai.ToKnow/
     - icon: email
       text: Email - ToKnow.ai
       href: mailto:ask@toknow.ai
