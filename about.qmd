@@ -27,7 +27,7 @@ about:
       href: https://www.threads.net/@toknow.ai
     - icon: tiktok
       text: Tiktok - ToKnow.ai
-      href: https://www.tiktok.com/@toknow.ai
+      href: https://www.tiktok.com/@toknow_ai
     - icon: facebook
       text: Facebook - ToKnow.ai
       href: https://www.facebook.com/ai.ToKnow/
