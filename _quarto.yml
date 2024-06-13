@@ -41,7 +41,7 @@ execute:
   freeze: auto
   cache: false
 shortcodes:
-  - filters/year.lua
+  - quarto_filters/year.lua
 
 
 

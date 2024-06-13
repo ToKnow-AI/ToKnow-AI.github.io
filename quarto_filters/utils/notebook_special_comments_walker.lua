@@ -5,7 +5,8 @@ local attributes = require "utils.attributes"
 ---@param block pandoc.Block|pandoc.Inline
 ---@param main_meta pandoc.MetaBlocks
 ---@param walk_callback function
----@return pandoc.Block,pandoc.MetaBlocks
+---@return pandoc.Block
+---@return pandoc.MetaBlocks
 local walk_callback_proxy = function (attribute_value, block, main_meta, walk_callback)
   local nparams = debug.getinfo(walk_callback).nparams
   if nparams == 3 then

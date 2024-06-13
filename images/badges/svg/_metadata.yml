@@ -33,24 +33,16 @@ format:
             \usepackage{tikz}
   # ipynb: default
 # https://quarto.org/docs/authoring/front-matter.html
-filters:
+quarto_filters:
   - ../quarto_filters/post_action_buttons.lua
   - ../quarto_filters/replace_base64_video_src.lua
   - ../quarto_filters/no-empty-toc.lua
   - at: post-render
     path: ../quarto_filters/output_when_format.lua
-  - at: post-render
-    path: ../quarto_filters/must_have_one_main_category.lua
 open-ipynb: 
   repository: "ToKnow-ai/ToKnow-ai.github.io"
   branch:
     dev: "quarto-dev"
     main: "main"
-ipynb-filters:
+ipynb-quarto_filters:
   - ../quarto_filters/notebook_filter.py
-# if you remove the below pagetitle setting, the dynamic page title is not updated,
-# even for updates from notebook filters (ipynb-filters:). Remember, title updates
-# for normal filters DONT work in listing page!, see:
-# https://github.com/quarto-dev/quarto-cli/discussions?discussions_q=author%3AMcKabue+
-# https://github.com/quarto-dev/quarto-cli/discussions/5260
-pagetitle: "Toknow.ai - {{< meta title >}}"

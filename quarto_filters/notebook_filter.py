@@ -1,41 +1,87 @@
+"""Quarto notebook filter"""
+
 import sys
-from nbformat import NotebookNode, v4, write as nb_write
 import re
+from nbformat import NotebookNode, v4, write as nb_write
 import yaml
 import mistune
 from bs4 import BeautifulSoup
 
-def get_html(markdown) -> BeautifulSoup:
+def get_html(markdown: str) -> BeautifulSoup:
+    """
+    Converts markdown to HTML using the mistune library and returns a BeautifulSoup object.
+
+    Args:
+        markdown (str): The markdown string to be converted.
+
+    Returns:
+        BeautifulSoup: A BeautifulSoup object representing the converted HTML.
+    """
     html = mistune.create_markdown()(markdown)
     return BeautifulSoup(html, features='html.parser')
 
 def parse_metadata_key(key: str, value: str):
+    """
+    Parses the metadata key and value and returns a tuple with the parsed key and value.
+
+    Args:
+        key (str): The metadata key.
+        value (str): The metadata value.
+
+    Returns:
+        tuple: A tuple containing the parsed key and value.
+
+    Raises:
+        ValueError: If the key type is not 'date' or 'array'.
+    """
+    key = key.strip()
+    value = value.strip()
     options_pattern = r"\s*(.*?)\s*,\s*type=(.*)\s*"
-    type_match = re.findall(options_pattern, key, re.IGNORECASE)
+    type_match: list[tuple[str, str]] = re.findall(options_pattern, key, re.IGNORECASE)
     if len(type_match) == 0:
-        return (key, get_html(value).get_text().replace("\n\n", "\n"))
-    (key, type) = type_match[0]
-    if type == 'date':
+        new_value: str = get_html(value).get_text().replace("\n\n", "\n").strip()
+        return (key, new_value)
+    (key, key_type) = type_match[0]
+    key = key.strip()
+    if key_type == 'date':
         date_pattern = r'.*(\d{4}\s*-\s*\d{2}\s*-\s*\d{2}).*'
-        return (key, re.match(date_pattern, value, re.DOTALL).group(1))
-    elif type == 'array':
+        new_value: str = re.match(date_pattern, value, re.DOTALL).group(1).strip()
+        return (key, new_value)
+    if key_type == 'array':
         html = get_html(value)
         list_items = html.find_all('li')
-        return (key, [item.get_text(strip=True) for item in list_items])
-    raise Exception(f"type({type}) is not in ['date', 'array']")
+        new_values = [item.get_text(strip=True) for item in list_items]
+        return (key, new_values)
+    raise ValueError(f"type({key_type}) is not in ['date', 'array']")
 
-def remove_lists(markdown_text):
+def remove_lists(markdown_text: str):
+    """
+    Removes ordered and unordered lists from the given markdown text.
+
+    Args:
+        markdown_text (str): The input markdown text.
+
+    Returns:
+        str: The markdown text with lists removed.
+    """
     # Remove ordered lists
     markdown_text = re.sub(r'^\d+\.\s*', '', markdown_text, flags=re.MULTILINE)
-    
     # Remove unordered lists
     markdown_text = re.sub(r'^\*\s*', '', markdown_text, flags=re.MULTILINE)
     markdown_text = re.sub(r'^\+\s*', '', markdown_text, flags=re.MULTILINE)
     markdown_text = re.sub(r'^-\s*', '', markdown_text, flags=re.MULTILINE)
-    
     return markdown_text
 
 def extract_quarto_metadata(cells: list[NotebookNode]) -> list[NotebookNode]:
+    """
+    Extracts Quarto metadata from markdown cells in a notebook.
+
+    Args:
+        cells (list[NotebookNode]): List of notebook cells.
+
+    Returns:
+        list[NotebookNode]: List of notebook cells with Quarto metadata extracted.
+    """
     new_cells = []
     metadata = {}
     pattern = r"<!--\s*metadata:\s*(.*?)\s*-->\s*(.*?)\s*(?=<!-- metadata:|$)"
@@ -45,7 +91,6 @@ def extract_quarto_metadata(cells: list[NotebookNode]) -> list[NotebookNode]:
             matches = re.findall(pattern, cell.source, re.DOTALL)
             skip_this_cell = False
             for (metadata_key, metadata_value) in matches:
-                metadata_value = metadata_value.strip()
                 if len(metadata_key) > 0 and len(metadata_value) > 0:
                     metadata_key, metadata_value = parse_metadata_key(metadata_key, metadata_value)
                     # html list in listings page spoils UI.
@@ -58,7 +103,10 @@ def extract_quarto_metadata(cells: list[NotebookNode]) -> list[NotebookNode]:
                 continue
         new_cells.append(cell)
     if any(metadata):
-        source = yaml.dump(metadata)
+        source = yaml.dump(
+            metadata,
+            sort_keys=False,
+            indent=4)
         metadata_cell = v4.new_markdown_cell(source=f'---\n{source}\n---')
         new_cells.insert(0, metadata_cell)
     return new_cells
@@ -68,5 +116,5 @@ notebook = v4.reads(sys.stdin.read())
 
 notebook.cells = extract_quarto_metadata(notebook.cells)
 
-# write notebook to stdout 
+# write notebook to stdout
 nb_write(notebook, sys.stdout)

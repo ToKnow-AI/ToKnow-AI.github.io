@@ -38,7 +38,8 @@ end
 
 -- print(get_first_key_value("<!-- { ['section-name-start'] = 'description' } -->"))
 ---@param comment string
----@return [string,string] | nil
+---@return string | nil
+---@return string | nil
 local get_first_key_value = function (comment)
   local pattern = "<!%-%-%s*{(.-)}%s*%-%->"
   local content = string.match(comment, pattern)

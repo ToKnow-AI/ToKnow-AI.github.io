@@ -1,6 +1,6 @@
 local str_ends_with = require "utils.str_ends_with"
-local read_file = require "utils.read_file"
 local ternary = require "utils.ternary"
+local read_metadata = require "utils.read_metadata"
 
 -- Function to encode string
 ---@param str string
@@ -22,7 +22,8 @@ end
 ---@return string
 local function replace_string(original, replace_pattern, replace_with)
   local encoded_pattern = replace_pattern:gsub("[%p%c%s]", "%%%0")
-  return original:gsub(encoded_pattern, replace_with)
+  local result = original:gsub(encoded_pattern, replace_with)
+  return result
 end
 
 -- Function to create a Google Colab link
@@ -121,15 +122,6 @@ end
 local function remove_extention(file_name)
   local file_name_without_ext = file_name:match("^(.+/.+)%..+$")
   return file_name_without_ext
-end
-
--- Funtion to extract the metadata of a file, given a file_name
----@param file_name string
---- @return pandoc.MetaValue
-local function read_metadata(file_name)
-  local yml_text = read_file(file_name)
-  local yml_doc = pandoc.read('---\n' .. yml_text .. '\n---', "markdown")
-  return yml_doc.meta
 end
 
 -- buttons_wrapper
