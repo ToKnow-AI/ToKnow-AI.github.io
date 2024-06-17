@@ -16,20 +16,22 @@ local compare_categories = function(main_categories, sub_categories)
 end
 
 return {
-    ---@param doc pandoc.Pandoc
-    ---@return pandoc.Pandoc|nil
-    Pandoc = function (doc)
-        local main_categories = read_metadata(quarto.project.directory .. '/_index.yml')['categories']
-        local sub_categories = doc.meta['categories']
-        local has_main_category = 
-          type(main_categories) == "table" and 
-          type(sub_categories) == "table" and 
-          compare_categories(main_categories, sub_categories)
-        if not has_main_category then
-          error(quarto.doc.input_file .. " HAS NO MAIN CATEGORY!")
-          os.exit(1)  -- Exit with a status code (non-zero indicates an error)
-          return 
-        end
-      return doc
+  compare_categories = compare_categories,
+
+  ---@param doc pandoc.Pandoc
+  ---@return pandoc.Pandoc|nil
+  Pandoc = function (doc)
+    local main_categories = read_metadata(quarto.project.directory .. '/_index.yml')['categories']
+    local sub_categories = doc.meta['categories']
+    local has_main_category =
+        type(main_categories) == "table" and
+        type(sub_categories) == "table" and
+        compare_categories(main_categories, sub_categories)
+    if not has_main_category then
+      error(quarto.doc.input_file .. " HAS NO MAIN CATEGORY!")
+      os.exit(1)  -- Exit with a status code (non-zero indicates an error)
+      return
     end
-  }
+    return doc
+  end
+}

@@ -12,3 +12,8 @@ To All:
  - Add disclaimer link to /terms-of-service
  - Add Packages used and save a requirements.txt
  - And how comes categories in project directory `_metadata.yaml` are not added when displaying a post when other categories have been specified at the file level, but works when file yaml is in a file. Works in home page though
+
+
+ ADD DISCLEIMER TO THE VERY END OF THE DOCUMENT
+ EXPORT NOTEBOOK
+ PREVENT RENDERING DRAFT DOCUMENTS

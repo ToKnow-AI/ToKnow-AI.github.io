@@ -4,14 +4,16 @@ toc: true
 toc-title: Table of Contents
 ---
 
-### Data and Analysis 
+### Data and Analysis
 The data used for analysis on ToKnow.ai belongs to their respective owners, who retain all rights over it. This data may have been crawled from publicly available sources or obtained through other means. In cases where data is crawled from public websites, ToKnow.ai will comply with the respective website's Terms of Use and applicable copyright laws, including fair use/dealing purposes such as research, private study, criticism, review, or reporting current events. ToKnow.ai may backup this data to ensure perpetual access. We strive to use reliable sources and implement quality control measures to ensure the best possible information. However, ToKnow.ai does not guarantee the accuracy or completeness of the data or analysis.
 
+For cybersecurity-related content, ToKnow.ai may publish information about vulnerabilities, exploits, or security flaws for educational and research purposes. Any disclosed vulnerabilities are intended to promote responsible disclosure practices and raise awareness within the cybersecurity community. ToKnow.ai does not condone or encourage the unauthorized or illegal use of this information for malicious purposes or activities that may cause harm or damage.
+
 ### Intended Use
-Any conclusions drawn from the analysis provided on ToKnow.ai are intended as informational resources only. They should not be considered as financial, legal or other professional advice, or taken as definitive recommendations.
+Any conclusions drawn from the analysis provided on ToKnow.ai are intended as informational resources only. They should not be considered as financial, legal, cybersecurity, or other professional advice, or taken as definitive recommendations.
 
 ### User Responsibilities
-It is the responsibility of the user to evaluate and consider any conclusions from the analysis, consult with professional advisors if needed, and make their own informed decisions. ToKnow.ai cannot be held liable for any decisions or actions taken based on the information provided.
+It is the responsibility of the user to evaluate and consider any conclusions from the analysis, consult with professional advisors if needed, and make their own informed decisions. ToKnow.ai cannot be held liable for any decisions or actions taken based on the information provided, including any misuse or unlawful application of cybersecurity-related information.
 
 ### Limitations of Liability
 By using ToKnow.ai, you agree that the data and analysis is provided "as is" without any warranties of any kind. Your use of ToKnow.ai is at your own risk. Links to external sources are provided solely for convenience and does not imply endorsement of the materials on those sources. ToKnow.ai does not accept liability arising directly or indirectly from the accuracy, content, or defects of the linked sources.
@@ -21,3 +23,5 @@ ToKnow.ai collects and analyzes data as described above. Any personal informatio
 
 ### Modification of Terms
 These Terms of Service and Privacy Notice may be updated from time to time. Your continued use of ToKnow.ai constitutes acceptance of the updated terms.
+
+Last Modified on {{< bash "git log -1 --format=%cs terms-of-service.qmd" >}}

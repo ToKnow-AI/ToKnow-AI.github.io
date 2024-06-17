@@ -19,7 +19,8 @@ function section_name_elements_walker (elements, start_predicate, end_predicate,
         else
           if skipped_blocks[start_key] then
             skipped_blocks[start_key]:insert(element)
-            new_elements:insert(pandoc.Para('But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain'))
+            new_elements:insert(pandoc.Para(
+              'But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain'))
           else
             skipped_blocks[start_key] = skipped_blocks[start_key] or pandoc.List:new{}
           end

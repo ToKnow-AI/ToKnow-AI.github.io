@@ -34,6 +34,7 @@ format:
   # ipynb: default
 # https://quarto.org/docs/authoring/front-matter.html
 filters:
+  - ../quarto_filters/disclaimer.lua
   - ../quarto_filters/post_action_buttons.lua
   - ../quarto_filters/replace_base64_video_src.lua
   - ../quarto_filters/no-empty-toc.lua
@@ -48,6 +49,7 @@ open-ipynb:
     main: "main"
 ipynb-filters:
   - ../quarto_filters/notebook_filter.py
+  # - ../quarto_filters/export_notebook.py
 # if you remove the below pagetitle setting, the dynamic page title is not updated,
 # even for updates from notebook filters (ipynb-filters:). Remember, title updates
 # for normal filters DONT work in listing page!, see:

@@ -161,10 +161,29 @@ local function post_action_buttons(doc)
       pandoc.utils.stringify(doc.meta['open-ipynb']['branch']['main']))
     local notebook_path = replace_string(input_file, quarto.project.directory, "")
 
-    local colab_link_html = create_colab_link(repository, branch, notebook_path, 'Open in Colab', '/images/badges/png/colab.png')
-    local binder_link_html = create_binder_link(repository, branch, notebook_path, 'Open in Binder', '/images/badges/png/binder.png')
-    local github_link_html = create_github_link(repository, branch, notebook_path, 'View on Github', '/images/badges/png/github.png')
-    local deepnote_link_html = create_deepnote_link(repository, branch, notebook_path, 'Open in Deepnote', '/images/badges/png/deepnote.png')
+    local colab_link_html = create_colab_link(
+      repository, branch, 
+      notebook_path, 
+      'Open in Colab', 
+      '/images/badges/png/colab.png')
+    local binder_link_html = create_binder_link(
+      repository, 
+      branch, 
+      notebook_path, 
+      'Open in Binder', 
+      '/images/badges/png/binder.png')
+    local github_link_html = create_github_link(
+      repository, 
+      branch, 
+      notebook_path, 
+      'View on Github', 
+      '/images/badges/png/github.png')
+    local deepnote_link_html = create_deepnote_link(
+      repository, 
+      branch, 
+      notebook_path, 
+      'Open in Deepnote', 
+      '/images/badges/png/deepnote.png')
     
     links_html = buttons_wrapper(
       colab_link_html .. binder_link_html .. github_link_html .. deepnote_link_html .. pdf_link_html)
