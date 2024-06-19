@@ -36,13 +36,32 @@ def parse_metadata_key(key: str, value: str):
     """
     key = key.strip()
     value = value.strip()
-    options_pattern = r"\s*(.*?)\s*,\s*type=(.*)\s*"
-    type_match: list[tuple[str, str]] = re.findall(options_pattern, key, re.IGNORECASE)
-    if len(type_match) == 0:
-        new_value: str = get_html(value).get_text().replace("\n\n", "\n").strip()
-        return (key, new_value)
-    (key, key_type) = type_match[0]
+    (key, *_options) = key.split(',', 1)
+    key_dict_options = {
+        'strip_markdown': True,
+        # 'type': Literal['date', 'array']
+        **{
+            option_key:option_value
+            for option_key,option_value
+            in [
+                i.strip().split('=')
+                for i
+                in (_options[0].split(',') if len(_options) > 0 else [])
+            ]
+        }
+    }
     key = key.strip()
+    if 'type' not in key_dict_options:
+        strip_markdown: str = key_dict_options.get('strip_markdown', 'None')
+        strip_markdown_option: bool = \
+            strip_markdown is True \
+            or str(strip_markdown).lower().strip() == 'true' \
+            or str(strip_markdown).lower().strip() == '1'
+        if strip_markdown_option:
+            new_value: str = get_html(value).get_text().replace("\n\n", "\n").strip()
+            return (key, new_value)
+        return (key, value)
+    key_type = key_dict_options.get('type', 'None').strip()
     if key_type == 'date':
         date_pattern = r'.*(\d{4}\s*-\s*\d{2}\s*-\s*\d{2}).*'
         new_value: str = re.match(date_pattern, value, re.DOTALL).group(1).strip()
@@ -91,7 +110,7 @@ def extract_quarto_metadata(cells: list[NotebookNode]) -> list[NotebookNode]:
             matches = re.findall(pattern, cell.source, re.DOTALL)
             skip_this_cell = False
             for (metadata_key, metadata_value) in matches:
-                if len(metadata_key) > 0 and len(metadata_value) > 0:
+                if len(metadata_key.strip()) > 0 and len(metadata_value) > 0:
                     metadata_key, metadata_value = parse_metadata_key(metadata_key, metadata_value)
                     # html list in listings page spoils UI.
                     metadata[metadata_key] = \

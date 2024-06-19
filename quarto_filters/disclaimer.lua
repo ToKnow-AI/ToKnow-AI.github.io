@@ -81,6 +81,15 @@ return {
     disclaimer_blocks:insert(pandoc.Space())
     disclaimer_blocks:insert(pandoc.Strong(pandoc.Emph(read_more)))
 
+    --- @type pandoc.Inlines
+    local custom_disclaimer = doc.meta['disclaimer']
+    if custom_disclaimer then
+      disclaimer_blocks:extend(pandoc.read('<br/>', 'html').blocks)
+      quarto.log.debug('custom_disclaimer', custom_disclaimer, type(custom_disclaimer))
+      disclaimer_blocks:insert(pandoc.Strong(pandoc.Emph(custom_disclaimer)))
+      doc.meta['disclaimer'] = nil
+    end
+
     local div = pandoc.Div(
       pandoc.Para(blocks_to_inlines(disclaimer_blocks)),
       pandoc.Attr('', { 'disclaimer' }, {}))
