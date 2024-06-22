@@ -1,0 +1,3 @@
+[submodule "posts/shazam-playlist-to-youtube-playlist/shazam-playlist-to-youtube-playlist"]
+	path = posts/shazam-playlist-to-youtube-playlist/shazam-playlist-to-youtube-playlist
+	url = https://huggingface.co/spaces/ToKnow-ai/shazam-playlist-to-youtube-playlist

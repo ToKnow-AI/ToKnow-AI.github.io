@@ -11,6 +11,8 @@ website:
     right:
       - href: index.qmd
         text: Posts
+      - href: apps/index.qmd
+        text: Apps
       - about.qmd
       - icon: github
         href: https://github.com/ToKnow-ai
