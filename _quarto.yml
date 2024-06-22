@@ -5,13 +5,14 @@ project:
     - "**/*.ipynb"
 website:
   title: "ToKnow.ai"
+  google-analytics: 'G-4R9DMKF8S7'
   site-url: https://toknow.ai
   description: "ToKnow.ai aims to extract knowledge from information in order to generate valuable insights and intelligence."
   navbar:
     right:
       - href: index.qmd
         text: Posts
-      - href: apps/index.qmd
+      - href: apps.qmd
         text: Apps
       - about.qmd
       - icon: github

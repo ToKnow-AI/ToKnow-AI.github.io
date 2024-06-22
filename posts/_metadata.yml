@@ -42,6 +42,8 @@ filters:
     path: ../quarto_filters/output_when_format.lua
   - at: post-render
     path: ../quarto_filters/must_have_one_main_category.lua
+  - at: post-render
+    path: ../quarto_filters/pdf_links.lua
 open-ipynb: 
   repository: "ToKnow-ai/ToKnow-ai.github.io"
   branch:

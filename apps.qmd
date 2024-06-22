@@ -1,0 +1,13 @@
+---
+# metadata-files: 
+#   - _index.yml
+
+feed: true
+listing:
+  contents: apps
+  sort: "date desc"
+  type: grid
+  filter-ui: true
+  feed:
+    type: partial
+---

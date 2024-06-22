@@ -1,0 +1,15 @@
+---
+title: Convert Your Shazam Playlist to YouTube Playlist
+image: ../posts/shazam-playlist-to-youtube-playlist/post.png
+format:
+  html:
+    css: _fullpage.css
+---
+
+<iframe
+	src="https://toknow-ai-shazam-playlist-to-youtube-playlist.hf.space"
+	frameborder="0"
+	width="100%"
+	height="100%"
+	class="fullpage"
+></iframe>

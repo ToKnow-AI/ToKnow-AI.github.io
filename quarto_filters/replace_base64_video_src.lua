@@ -73,7 +73,7 @@ local makeBox = function (text, url, icon, color)
       \\end{centering}')
     return pandoc.Div(
       pandoc.Link(
-        pandoc.List{ latex_top_raw_block, pandoc_image_block, latex_bottom_raw_block }, 
+        pandoc.List{ latex_top_raw_block, pandoc_image_block, latex_bottom_raw_block },
         url))
   end
 end
