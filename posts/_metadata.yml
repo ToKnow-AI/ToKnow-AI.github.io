@@ -21,7 +21,7 @@ format:
         mapping: pathname
         loading: lazy
         category: Giscus Comments
-        category-id: giscus-comments
+        category-id: DIC_kwDOL20t9s4CfKjw
   pdf:
     # alternative: https://github.com/dragonstyle/share-post/blob/8026647db8619666cadef7d4205d9f16571ca95d/_extensions/share-post/share-post.lua#L265
     include-in-header:  
