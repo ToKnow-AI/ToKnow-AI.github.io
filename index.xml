@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>ToKnow.ai</title>
+<link>https://toknow.ai/</link>
+<atom:link href="https://toknow.ai/index.xml" rel="self" type="application/rss+xml"/>
+<description>// Research, Numbers and Insightful Ideas //</description>
+<generator>quarto-1.4.555</generator>
+<lastBuildDate>Sun, 23 Jun 2024 11:09:54 GMT</lastBuildDate>
+<item>
+  <title>Convert Your Shazam Playlist to YouTube Playlist</title>
+  <dc:creator>Charles Kabui</dc:creator>
+  <link>https://toknow.ai/posts/shazam-playlist-to-youtube-playlist/</link>
+  <description><![CDATA[ Shazam is an incredible app for identifying music playing around you. Whether you’re at a cafe, watching a movie, or just hearing a catchy tune on the radio, Shazam helps you discover new music effortlessly. However, the app’s main limitation is that it doesn’t allow you to play full songs unless you have a linked music streaming subscription. ]]></description>
+  <category>ideas</category>
+  <category>shazam</category>
+  <category>youtube</category>
+  <guid>https://toknow.ai/posts/shazam-playlist-to-youtube-playlist/</guid>
+  <pubDate>Sun, 23 Jun 2024 11:09:54 GMT</pubDate>
+  <media:content url="https://toknow.ai/posts/shazam-playlist-to-youtube-playlist/post.png" medium="image" type="image/png" height="120" width="144"/>
+</item>
+<item>
+  <title>Kenya Population from year 1974 to year 2022</title>
+  <dc:creator>Charles Kabui</dc:creator>
+  <link>https://toknow.ai/posts/kenya-population-from-1974-to-2022/</link>
+  <description><![CDATA[ The data has been sourced from the World Bank API.<sup>1</sup> ]]></description>
+  <category>population</category>
+  <category>animation</category>
+  <category>data science</category>
+  <guid>https://toknow.ai/posts/kenya-population-from-1974-to-2022/</guid>
+  <pubDate>Sat, 08 Jun 2024 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Artificial General Intelligence</title>
+  <dc:creator>Charles Kabui</dc:creator>
+  <link>https://toknow.ai/posts/artificial-general-intelligence/</link>
+  <description><![CDATA[ Artificial Intelligence (AI) is currently replacing simple tasks and some major tasks. Suppose we are to assume that AI is to incrementally become better, it will change most aspects of how we live our lives. If it becomes even stronger, it will probably change the future of humanity. ]]></description>
+  <category>ideas</category>
+  <category>AGI</category>
+  <category>philosophy</category>
+  <category>artificial intelligence</category>
+  <guid>https://toknow.ai/posts/artificial-general-intelligence/</guid>
+  <pubDate>Tue, 04 Jun 2024 00:00:00 GMT</pubDate>
+  <media:content url="https://toknow.ai/posts/artificial-general-intelligence/pexels-googledeepmind-17485658.jpg" medium="image" type="image/jpeg"/>
+</item>
+</channel>
+</rss>

@@ -6,9 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="// Research, Numbers and Insightful Ideas //">
+<meta name="author" content="Charles Kabui">
+<meta name="dcterms.date" content="2024-06-23">
+<meta name="keywords" content="nation media group, kenya, paywalls, search engine optimization">
 
-<title>ToKnow.ai - Information To Knowledge</title>
+<title>Toknow.ai - How Online Media Paywalls Should Work</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,29 +23,61 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="/site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="/site_libs/quarto-nav/headroom.min.js"></script>
-<script src="/site_libs/clipboard/clipboard.min.js"></script>
-<script src="/site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="/site_libs/quarto-search/fuse.min.js"></script>
-<script src="/site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="/">
-<script src="/site_libs/quarto-listing/list.min.js"></script>
-<script src="/site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="/site_libs/quarto-html/quarto.js"></script>
-<script src="/site_libs/quarto-html/popper.min.js"></script>
-<script src="/site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="/site_libs/quarto-html/anchor.min.js"></script>
-<link href="/site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="/site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="/site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="/site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="/site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="/site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="/site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,35 +105,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-posts-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-subtitle','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-posts-listing'] = new List('listing-posts-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-4R9DMKF8S7"></script>
 
 <script type="text/javascript">
@@ -110,38 +115,17 @@ gtag('js', new Date());
 gtag('config', 'G-4R9DMKF8S7', { 'anonymize_ip': true});
 </script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="/_styles.css">
-<link rel="stylesheet" href="/_index.css">
+<link rel="stylesheet" href="../../_styles.css">
+<meta name="citation_title" content="How Online Media Paywalls Should Work">
+<meta name="citation_keywords" content="nation media group,kenya,paywalls,search engine optimization">
+<meta name="citation_author" content="Charles Kabui">
+<meta name="citation_publication_date" content="2024-06-23">
+<meta name="citation_cover_date" content="2024-06-23">
+<meta name="citation_year" content="2024">
+<meta name="citation_online_date" content="2024-06-23">
+<meta name="citation_fulltext_html_url" content="https://toknow.ai/posts/how-online-media-paywalls-should-work">
+<meta name="citation_language" content="en">
 </head>
 
 <body class="nav-fixed">
@@ -151,7 +135,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="/index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">ToKnow.ai</span>
     </a>
   </div>
@@ -162,15 +146,15 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="/index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Posts</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="/apps.html"> 
+    <a class="nav-link" href="../../apps.html"> 
 <span class="menu-text">Apps</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="/about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -184,7 +168,7 @@ window.Quarto = {
 <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="/index.xml"> <i class="bi bi-rss" role="img" aria-label="ToKnow.ai RSS">
+    <a class="nav-link" href="../../index.xml"> <i class="bi bi-rss" role="img" aria-label="ToKnow.ai RSS">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -199,182 +183,158 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">Information <u>To Know</u>ledge</h1>
-                  <div>
-        <div class="description">
-          // Research, Numbers and Insightful Ideas //
-        </div>
-      </div>
-                          <div class="quarto-categories">
-                <div class="quarto-category">artificial intelligence</div>
-                <div class="quarto-category">data science</div>
+    <div class="quarto-title column-body">
+      <h1 class="title">How Online Media Paywalls Should Work</h1>
+            <p class="subtitle lead">Paywalls and Search Engine Optimization</p>
+                                <div class="quarto-categories">
+                <div class="quarto-category">paywalls</div>
+                <div class="quarto-category">online media</div>
                 <div class="quarto-category">cyber security</div>
-                <div class="quarto-category">money</div>
-                <div class="quarto-category">ideas</div>
               </div>
                   </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page-left">
+  <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Charles Kabui <a href="mailto:charles@toknow.ai" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
+            </div>
+    </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">June 23, 2024</p>
+      </div>
+    </div>
     
       
     </div>
     
+
+  <div>
+    <div class="keywords">
+      <div class="block-title">Keywords</div>
+      <p>nation media group, kenya, paywalls, search engine optimization</p>
+    </div>
+  </div>
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(3)</span></div><div class="category" data-category="AGI">AGI <span class="quarto-category-count">(1)</span></div><div class="category" data-category="animation">animation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="artificial intelligence">artificial intelligence <span class="quarto-category-count">(1)</span></div><div class="category" data-category="data science">data science <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ideas">ideas <span class="quarto-category-count">(2)</span></div><div class="category" data-category="philosophy">philosophy <span class="quarto-category-count">(1)</span></div><div class="category" data-category="population">population <span class="quarto-category-count">(1)</span></div><div class="category" data-category="shazam">shazam <span class="quarto-category-count">(1)</span></div><div class="category" data-category="youtube">youtube <span class="quarto-category-count">(1)</span></div></div></div>
-<!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
-
-
-
-
-
-
-
-
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-posts-listing">
-<div class="listing-actions-group">
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of Contents</h2>
+   
+  <ul>
+  <li><a href="#what-is-lorem-ipsum" id="toc-what-is-lorem-ipsum" class="nav-link active" data-scroll-target="#what-is-lorem-ipsum">What is Lorem Ipsum?</a></li>
+  <li><a href="#why-do-we-use-it" id="toc-why-do-we-use-it" class="nav-link" data-scroll-target="#why-do-we-use-it">Why do we use it?</a></li>
+  <li><a href="#where-does-it-come-from" id="toc-where-does-it-come-from" class="nav-link" data-scroll-target="#where-does-it-come-from">Where does it come from?</a></li>
+  <li><a href="#where-can-i-get-some" id="toc-where-can-i-get-some" class="nav-link" data-scroll-target="#where-can-i-get-some">Where can I get some?</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<hr class="mt-1 mb-1 w-50 mx-auto">
+<div class="d-flex justify-content-center gap-3 align-items-center flex-wrap clearfix p-1 post_action_buttons">
+<a target="_blank" href="https://colab.research.google.com/github/ToKnow-ai/ToKnow-ai.github.io/blob/quarto-dev/posts/how-online-media-paywalls-should-work/index.ipynb" aria-label="Open in Colab" title="Open in Colab"> <img src="../../images/badges/png/colab.png" aria-label="Open in Colab" title="Open in Colab"> </a><a target="_blank" href="https://mybinder.org/v2/gh/ToKnow-ai/ToKnow-ai.github.io/quarto-dev?labpath=/posts/how-online-media-paywalls-should-work/index.ipynb" aria-label="Open in Binder" title="Open in Binder"> <img src="../../images/badges/png/binder.png" aria-label="Open in Binder" title="Open in Binder"> </a><a target="_blank" href="https://github.com/ToKnow-ai/ToKnow-ai.github.io/blob/quarto-dev/posts/how-online-media-paywalls-should-work/index.ipynb" aria-label="View on Github" title="View on Github"> <img src="../../images/badges/png/github.png" aria-label="View on Github" title="View on Github"> </a><a target="_blank" href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2FToKnow-ai%2FToKnow-ai.github.io%2Fblob%2Fquarto-dev%2F%2Fposts%2Fhow-online-media-paywalls-should-work%2Findex.ipynb" aria-label="Open in Deepnote" title="Open in Deepnote"> <img src="../../images/badges/png/deepnote.png" aria-label="Open in Deepnote" title="Open in Deepnote"> </a><a target="_blank" href="https://toknow.ai/posts/how-online-media-paywalls-should-work/index.pdf" aria-label="Download as PDF" title="Download as PDF"> <img src="../../images/badges/png/pdf.png" aria-label="Download as PDF" title="Download as PDF"> </a>
 </div>
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="ideas,shazam,youtube" data-listing-date-sort="1719140994000" data-listing-file-modified-sort="1719140994890" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="347">
-<div class="thumbnail">
-<p><a href="/./posts/shazam-playlist-to-youtube-playlist/index.html" class="no-external"></a></p><a href="/./posts/shazam-playlist-to-youtube-playlist/index.html" class="no-external">
-<p><img src="/posts/shazam-playlist-to-youtube-playlist/post.png" class="thumbnail-image"></p>
-</a><p><a href="/./posts/shazam-playlist-to-youtube-playlist/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="/./posts/shazam-playlist-to-youtube-playlist/index.html" class="no-external">Convert Your Shazam Playlist to YouTube Playlist</a>
-</h3>
-<div class="listing-subtitle">
-<a href="/./posts/shazam-playlist-to-youtube-playlist/index.html" class="no-external">Listen to Your Shazam Discoveries for Free.</a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('ideas'); return false;">
-ideas
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('shazam'); return false;">
-shazam
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('youtube'); return false;">
-youtube
-</div>
-</div>
-<div class="listing-description">
-<a href="/./posts/shazam-playlist-to-youtube-playlist/index.html" class="no-external">Shazam is an incredible app for identifying music playing around you. Whether you’re at a cafe, watching a movie, or just hearing a catchy tune on the radio, Shazam helps you discover new music effortlessly. However, the app’s main limitation is that it doesn’t allow you to play full songs unless you have a linked music streaming subscription.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="/./posts/shazam-playlist-to-youtube-playlist/index.html" class="no-external">
-<div class="listing-date">
-Jun 23, 2024
-</div>
-<div class="listing-author">
-Charles Kabui
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="population,animation,data science" data-listing-date-sort="1717804800000" data-listing-file-modified-sort="1719140994890" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="17">
-<div class="thumbnail">
-<p><a href="/./posts/kenya-population-from-1974-to-2022/index.html" class="no-external"></a></p><a href="/./posts/kenya-population-from-1974-to-2022/index.html" class="no-external">
-<!-- img(9CEB782EFEE6)[progressive=false, height=]:posts/kenya-population-from-1974-to-2022/index.html -->
-</a><p><a href="/./posts/kenya-population-from-1974-to-2022/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="/./posts/kenya-population-from-1974-to-2022/index.html" class="no-external">Kenya Population from year 1974 to year 2022</a>
-</h3>
-<div class="listing-subtitle">
-<a href="/./posts/kenya-population-from-1974-to-2022/index.html" class="no-external">An animated plot of the Kenya population increase.</a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('population'); return false;">
-population
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('animation'); return false;">
-animation
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('data science'); return false;">
-data science
+<hr class="mt-1 mb-1 w-50 mx-auto mb-5">
+<section id="what-is-lorem-ipsum" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-lorem-ipsum">What is Lorem Ipsum?</h2>
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+</section>
+<section id="why-do-we-use-it" class="level2">
+<h2 class="anchored" data-anchor-id="why-do-we-use-it">Why do we use it?</h2>
+<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using ‘Content here, content here’, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for ‘lorem ipsum’ will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+</section>
+<section id="where-does-it-come-from" class="level2">
+<h2 class="anchored" data-anchor-id="where-does-it-come-from">Where does it come from?</h2>
+<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of “de Finibus Bonorum et Malorum” (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, “Lorem ipsum dolor sit amet..”, comes from a line in section 1.10.32.</p>
+<p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from “de Finibus Bonorum et Malorum” by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
+</section>
+<section id="where-can-i-get-some" class="level2">
+<h2 class="anchored" data-anchor-id="where-can-i-get-some">Where can I get some?</h2>
+<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don’t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn’t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
+<div id="cell-2" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>options_pattern <span class="op">=</span> <span class="vs">r"\s*(.*?)\s*,\s*(\b\w+\b=\b\w+\b)\s*"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>key <span class="op">=</span> <span class="st">"categories, strip_markdown=false, strip_markdown2=1, type=array"</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>re.findall(options_pattern, key, re.IGNORECASE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="16">
+<pre><code>[('categories', 'strip_markdown=false'),
+ ('', 'strip_markdown2=1'),
+ ('', 'type=array')]</code></pre>
 </div>
 </div>
-<div class="listing-description">
-<a href="/./posts/kenya-population-from-1974-to-2022/index.html" class="no-external"><!-- desc(5A0113B34292)[max=175]:posts/kenya-population-from-1974-to-2022/index.html --></a>
+<div id="cell-3" class="cell" data-execution_count="70">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>(type__, <span class="op">*</span>_options) <span class="op">=</span> <span class="st">"categories"</span>.split(<span class="st">','</span>, <span class="dv">1</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>type__, _options</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="70">
+<pre><code>('categories', [])</code></pre>
 </div>
 </div>
-<div class="metadata">
-<a href="/./posts/kenya-population-from-1974-to-2022/index.html" class="no-external">
-<div class="listing-date">
-Jun 8, 2024
-</div>
-<div class="listing-author">
-Charles Kabui
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="ideas,AGI,philosophy,artificial intelligence" data-listing-date-sort="1717459200000" data-listing-file-modified-sort="1719140994882" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="203">
-<div class="thumbnail">
-<p><a href="/./posts/artificial-general-intelligence/index.html" class="no-external"></a></p><a href="/./posts/artificial-general-intelligence/index.html" class="no-external">
-<p><img src="/posts/artificial-general-intelligence/pexels-googledeepmind-17485658.jpg" class="thumbnail-image"></p>
-</a><p><a href="/./posts/artificial-general-intelligence/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="/./posts/artificial-general-intelligence/index.html" class="no-external">Artificial General Intelligence</a>
-</h3>
-<div class="listing-subtitle">
-<a href="/./posts/artificial-general-intelligence/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('ideas'); return false;">
-ideas
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('AGI'); return false;">
-AGI
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('philosophy'); return false;">
-philosophy
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('artificial intelligence'); return false;">
-artificial intelligence
+<div id="cell-4" class="cell" data-execution_count="71">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>key_dict_options <span class="op">=</span> {</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>        <span class="st">'strip_markdown'</span>: <span class="va">True</span>,</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>        <span class="co"># 'type': Literal['date', 'array']</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>        <span class="op">**</span>{</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>            option_key:option_value</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> option_key,option_value</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>            <span class="kw">in</span> [</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>                i.strip().split(<span class="st">'='</span>)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>                <span class="cf">for</span> i</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>                <span class="kw">in</span> (_options[<span class="dv">0</span>].split(<span class="st">','</span>) <span class="cf">if</span> <span class="bu">len</span>(_options) <span class="op">&gt;</span> <span class="dv">0</span> <span class="cf">else</span> [])</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>            ]</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>key_dict_options</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="71">
+<pre><code>{'strip_markdown': True}</code></pre>
 </div>
 </div>
-<div class="listing-description">
-<a href="/./posts/artificial-general-intelligence/index.html" class="no-external">Artificial Intelligence (AI) is currently replacing simple tasks and some major tasks. Suppose we are to assume that AI is to incrementally become better, it will change most aspects of how we live our lives. If it becomes even stronger, it will probably change the future of humanity.</a>
+<div id="cell-5" class="cell" data-execution_count="74">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">str</span>(<span class="va">False</span>).lower().strip()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="74">
+<pre><code>'false'</code></pre>
 </div>
 </div>
-<div class="metadata">
-<a href="/./posts/artificial-general-intelligence/index.html" class="no-external">
-<div class="listing-date">
-Jun 4, 2024
+
+
+<hr>
+<div class="disclaimer">
+<p><strong><em>Disclaimer:</em></strong> <em>The analysis, conclusions, and information provided in this publication represent the views and interpretations of the authors and researchers involved. While ToKnow.ai strives to provide accurate and reliable information, the specific details, data, and findings are not warranted or guaranteed. This analysis is intended solely for general informational purposes and should not be construed as financial, legal or other professional advice, recommendations, solicitations, or any other call to action.</em><br>
+<em>The information provided in this article, including any vulnerabilities, exploits, or security flaws discussed, is intended solely for educational and research purposes. The authors and publishers of this content do not condone or encourage the unauthorized or illegal use of this information for malicious purposes or activities that may cause harm or damage to individuals, organizations, or systems. The details and findings presented herein are provided with the intent of raising awareness and promoting responsible disclosure practices within the cybersecurity community. Any misuse or unlawful application of the information contained in this article is strictly prohibited and may be subject to legal consequences. Readers are advised to exercise caution and seek professional guidance before attempting to replicate or implement any techniques or methodologies discussed. The authors and publishers shall not be held liable for any direct, indirect, incidental, or consequential damages arising from the use or misuse of the information provided.</em> <strong><em>Read more: <a href="https://toknow.ai/terms-of-service">/terms-of-service</a></em></strong><br>
+<strong><em>We <a href="https://www.nationmedia.com/contact/">contacted Nation Media Group</a> for two months prior to this publication but they did not respond. <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></em></strong></p>
 </div>
-<div class="listing-author">
-Charles Kabui
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>We <a href="https://www.nationmedia.com/contact/">contacted Nation Media Group</a> through the following emails: <a href="mailto:support@nation.africa" class="email">support@nation.africa</a>, <a href="mailto:sales_inquiries@ke.nationmedia.com" class="email">sales_inquiries@ke.nationmedia.com</a>, <a href="mailto:newsdesk@ke.nationmedia.com" class="email">newsdesk@ke.nationmedia.com</a>, <a href="mailto:publiceditor@ke.nationmedia.com" class="email">publiceditor@ke.nationmedia.com</a>, <a href="mailto:mailbox@ke.nationmedia.com" class="email">mailbox@ke.nationmedia.com</a>, <a href="mailto:epaper@ke.nationmedia.com" class="email">epaper@ke.nationmedia.com</a>, <a href="mailto:Customercare@ke.nationmedia.com" class="email">Customercare@ke.nationmedia.com</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div>GNU GENERAL PUBLIC LICENSE</div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{kabui2024,
+  author = {Kabui, Charles},
+  date = {2024-06-23},
+  url = {https://toknow.ai/posts/how-online-media-paywalls-should-work},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-kabui2024" class="csl-entry quarto-appendix-citeas" role="listitem">
+Kabui, Charles. 2024. June 23, 2024. <a href="https://toknow.ai/posts/how-online-media-paywalls-should-work">https://toknow.ai/posts/how-online-media-paywalls-should-work</a>.
+</div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -933,6 +893,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<script src="https://giscus.app/client.js" data-repo="ToKnow-ai/ToKnow-ai.github.io" data-repo-id="R_kgDOL20t9g" data-category="Giscus Comments" data-category-id="DIC_kwDOL20t9s4CfKjw" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" data-loading="lazy" async="">
+</script>
+<input type="hidden" id="giscus-base-theme" value="light">
+<input type="hidden" id="giscus-alt-theme" value="dark">
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -945,12 +909,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
  Copyright © 2024, ToKnow.ai
   </li>  
     <li class="nav-item">
-    <a class="nav-link" href="/terms-of-service.html">
+    <a class="nav-link" href="../../terms-of-service.html">
 <p>Terms of Service</p>
 </a>
   </li>  
     <li class="nav-item">
-    <a class="nav-link" href="/LICENSE">
+    <a class="nav-link" href="../../LICENSE">
 <p>License</p>
 </a>
   </li>  
